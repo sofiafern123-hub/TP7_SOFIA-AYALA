@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Like - Inicio</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Ir al inicio">Proyecto Like</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      ☰
+    </button>
+    <nav id="nav" class="nav" aria-label="Menú principal">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-secciones">
+            Secciones ▼
+          </button>
+          <ul id="submenu-secciones" class="submenu">
+            <li><a href="social_media.html">Multimedia</a></li>
+            <li><a href="social_comentario.html">Comentarios</a></li>
+            <li><a href="social_noticias.html">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <section class="hero">
+      <h1>Bienvenida a Proyecto Like</h1>
+      <p>Explora multimedia, comenta y descubre noticias. Todo con likes y diseño responsivo.</p>
+      <div class="cta-grid">
+        <a class="btn btn-primario" href="social_media.html">Ir a Multimedia</a>
+        <a class="btn btn-secundario" href="social_comentario.html">Ir a Comentarios</a>
+        <a class="btn btn-terciario" href="social_noticias.html">Ir a Noticias</a>
+      </div>
+    </section>
+
+    <section class="info">
+      <h2>Características</h2>
+      <ul class="lista-caracteristicas">
+        <li><strong>Responsivo:</strong> Se adapta a móviles, tablets y desktop.</li>
+        <li><strong>Menús:</strong> Hamburguesa en móvil y submenú desplegable.</li>
+        <li><strong>Likes:</strong> Íconos con contador en cada tarjeta.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>TP6 — Proyecto Like. Hecho con 💙.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
