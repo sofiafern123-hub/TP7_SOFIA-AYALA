@@ -1,89 +1,205 @@
 :root {
-  --bg: #0f1420;
-  --bg-soft: #141a2a;
-  --text: #e8ecf1;
-  --muted: #98a3b8;
-  --accent: #6dd3ff;
-  --like: #ff5a90;
-  --border: #24314a;
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primario: #60a5fa;
+  --secundario: #34d399;
+  --terciario: #f59e0b;
+  --borde: #1f2937;
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #0b1220, var(--bg));
+  color: var(--text);
+}
 
+/* Header y navegación */
 .header {
-  position: sticky; top: 0; z-index: 1000;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0.75rem 1rem; background: var(--bg-soft); border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
 }
 
-.logo { font-weight: 700; letter-spacing: .2px; }
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
 
-.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center; }
-.nav a { color: var(--text); text-decoration: none; padding: .5rem .75rem; border-radius: .5rem; }
-.nav a.active, .nav a:hover { background: rgba(109, 211, 255, 0.18); }
+.menu-toggle {
+  font-size: 1.25rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  display: none; /* se muestra en móvil */
+}
 
-.has-submenu { position: relative; }
+.nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+.nav a[aria-current="page"] {
+  background: #1f2937;
+  border: 1px solid var(--borde);
+}
+
+.has-submenu {
+  position: relative;
+}
 .submenu-toggle {
-  background: transparent; color: var(--text); border: 1px solid var(--border);
-  padding: .5rem .75rem; border-radius: .5rem; cursor: pointer;
+  background: #1f2937;
+  color: var(--text);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
 }
+
+/* Submenú */
 .submenu {
-  position: absolute; top: 110%; left: 0; min-width: 220px;
-  background: var(--bg-soft); border: 1px solid var(--border); border-radius: .5rem;
-  box-shadow: 0 10px 24px rgba(0,0,0,.35); padding: .5rem; display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #0b1220;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 0.5rem;
 }
-.has-submenu.open .submenu { display: block; }
-.submenu a { display: block; padding: .5rem .6rem; border-radius: .4rem; }
-.submenu a:hover { background: rgba(109, 211, 255, 0.12); }
+.has-submenu.open .submenu { display: flex; }
+.submenu a { padding: 0.4rem 0.6rem; }
 
-.hamburger {
-  width: 42px; height: 36px; display: none; flex-direction: column; justify-content: center; gap: 6px;
-  background: transparent; border: 1px solid var(--border); border-radius: .5rem; cursor: pointer;
+/* Contenedor principal */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
 }
-.hamburger span { display: block; height: 2px; background: var(--text); width: 70%; margin: 0 auto; }
 
-.container { max-width: 1100px; padding: 1rem; margin: 0 auto; }
-.hero { text-align: center; padding: 2rem 1rem; }
-.grid-buttons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
 .btn {
-  display: inline-block; text-align: center; padding: .9rem 1rem; border-radius: .7rem;
-  background: linear-gradient(135deg, rgba(109,211,255,.25), rgba(109,211,255,.05));
-  color: var(--text); text-decoration: none; border: 1px solid var(--border);
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--borde);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.28); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.btn-primario { background: var(--primario); color: #0b1220; }
+.btn-secundario { background: var(--secundario); color: #0b1220; }
+.btn-terciario { background: var(--terciario); color: #0b1220; }
 
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.card {
-  background: var(--bg-soft); border: 1px solid var(--border); border-radius: .8rem; padding: 1rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+/* Tarjetas */
+.grid.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
-.card h2 { margin-top: 0; }
-.card img, .card video, .card audio { border-radius: .6rem; width: 100%; }
+.tarjeta {
+  background: var(--card);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.tarjeta img, .tarjeta video {
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+}
 
+/* Botón like */
 .like-btn {
-  margin-top: .8rem; padding: .5rem .8rem; border-radius: .6rem; border: 1px solid var(--border);
-  background: rgba(255,90,144,.08); color: var(--text); cursor: pointer; display: inline-flex; align-items: center; gap: .6rem;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0b1220;
+  color: var(--text);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
-.like-btn[aria-pressed="true"] { background: rgba(255,90,144,.18); border-color: #ff80a8; }
-.like-btn .count { color: var(--muted); }
+.like-btn:hover { transform: translateY(-1px); }
+.like-btn[aria-pressed="true"] {
+  background: #17315e;
+  border-color: var(--primario);
+}
+.like-icon { font-size: 1.1rem; }
+.like-count { font-variant-numeric: tabular-nums; }
 
-.footer { padding: 2rem 1rem; text-align: center; color: var(--muted); }
+/* Footer */
+.footer {
+  border-top: 1px solid var(--borde);
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
 
 /* Responsivo */
-@media (max-width: 920px) {
-  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .grid-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  .grid.tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cta-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px) {
-  .hamburger { display: flex; }
-  .nav { position: fixed; top: 58px; right: 12px; left: 12px; background: var(--bg-soft);
-    border: 1px solid var(--border); border-radius: .8rem; padding: .6rem; display: none; }
+@media (max-width: 700px) {
+  .menu-toggle { display: inline-block; }
+  .nav { display: none; }
   .nav.open { display: block; }
-  .nav ul { flex-direction: column; gap: .5rem; }
-
-  .cards { grid-template-columns: 1fr; }
-  .grid-buttons { grid-template-columns: 1fr; }
-  .submenu { position: static; box-shadow: none; border: none; padding: 0; }
+  .nav .menu { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .has-submenu { width: 100%; }
+  .submenu {
+    position: static;
+    display: none;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .has-submenu.open .submenu { display: flex; }
+  .grid.tarjetas { grid-template-columns: 1fr; }
 }
