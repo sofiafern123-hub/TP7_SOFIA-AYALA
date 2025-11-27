@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Like - Multimedia</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">Proyecto Like</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav" aria-label="Menú principal">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-secciones">Secciones ▼</button>
+          <ul id="submenu-secciones" class="submenu">
+            <li><a href="social_media.html" aria-current="page">Multimedia</a></li>
+            <li><a href="social_comentario.html">Comentarios</a></li>
+            <li><a href="social_noticias.html">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <h1>Multimedia</h1>
+    <div class="grid tarjetas">
+      <!-- Video -->
+      <article class="tarjeta">
+        <h2>Video: Atardecer</h2>
+        <video controls width="100%" aria-label="Video de un atardecer">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
+        <button class="like-btn" aria-pressed="false" data-like-id="media-video">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="media-video">0</span>
+        </button>
+      </article>
+
+      <!-- Imagen -->
+      <article class="tarjeta">
+        <h2>Imagen: Montaña</h2>
+        <img src="https://picsum.photos/800/400?random=1" alt="Montaña con cielo azul" />
+        <button class="like-btn" aria-pressed="false" data-like-id="media-imagen">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="media-imagen">0</span>
+        </button>
+      </article>
+
+      <!-- Audio -->
+      <article class="tarjeta">
+        <h2>Audio: Lo-fi beat</h2>
+        <audio controls aria-label="Audio lo-fi para concentración">
+          <source src="https://www.kozco.com/tech/LRMonoPhase4.wav" type="audio/wav" />
+          Tu navegador no soporta audio HTML5.
+        </audio>
+        <button class="like-btn" aria-pressed="false" data-like-id="media-audio">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="media-audio">0</span>
+        </button>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Multimedia — Proyecto Like.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
