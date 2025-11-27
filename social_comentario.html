@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Like - Comentarios</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">Proyecto Like</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav" aria-label="Menú principal">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-secciones">Secciones ▼</button>
+          <ul id="submenu-secciones" class="submenu">
+            <li><a href="social_media.html">Multimedia</a></li>
+            <li><a href="social_comentario.html" aria-current="page">Comentarios</a></li>
+            <li><a href="social_noticias.html">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <h1>Comentarios</h1>
+    <div class="grid tarjetas">
+      <article class="tarjeta">
+        <h2>Opinión sobre diseño web</h2>
+        <p>Me encanta cuando un sitio es simple, rápido y accesible. Menos es más.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="com-diseno">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="com-diseno">0</span>
+        </button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Comentario sobre aprendizaje</h2>
+        <p>Aprender paso a paso y con ejemplos prácticos hace toda la diferencia.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="com-aprendizaje">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="com-aprendizaje">0</span>
+        </button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Idea para proyectos</h2>
+        <p>Un tablero visual con tareas y prioridades ayuda a mantener el foco.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="com-proyectos">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="com-proyectos">0</span>
+        </button>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Comentarios — Proyecto Like.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
