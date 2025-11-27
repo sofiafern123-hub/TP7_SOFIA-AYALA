@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Like - Noticias</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">Proyecto Like</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav" aria-label="Menú principal">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-secciones">Secciones ▼</button>
+          <ul id="submenu-secciones" class="submenu">
+            <li><a href="social_media.html">Multimedia</a></li>
+            <li><a href="social_comentario.html">Comentarios</a></li>
+            <li><a href="social_noticias.html" aria-current="page">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <h1>Noticias</h1>
+    <div class="grid tarjetas">
+      <article class="tarjeta">
+        <h2>Tecnología</h2>
+        <p>Nuevas herramientas facilitan la creación de sitios accesibles y rápidos.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="not-tec">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="not-tec">0</span>
+        </button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Ciencia</h2>
+        <p>Investigaciones abiertas y colaborativas aceleran descubrimientos clave.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="not-ciencia">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="not-ciencia">0</span>
+        </button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Cultura</h2>
+        <p>Comunidades creativas comparten proyectos que inspiran a aprender.</p>
+        <button class="like-btn" aria-pressed="false" data-like-id="not-cultura">
+          <span class="like-icon" aria-hidden="true">👍</span> <span class="like-count" data-like-id="not-cultura">0</span>
+        </button>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Noticias — Proyecto Like.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
